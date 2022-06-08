@@ -19,9 +19,8 @@ app.use('/orders', routerOrder)
 app.use('/payments', routerPayment)
 app.use('/users', routerUser)
 
-const port = 5002
-app.listen(port, (err) =>
+app.listen(process.env.PORT, (err) =>
   err
     ? console.log('Error!', err)
-    : console.log(`The server is running on port: ${port}`),
+    : console.log(`The server is running on port: ${process.env.PORT}`),
 )
