@@ -19,7 +19,7 @@ app.use('/orders', routerOrder)
 app.use('/payments', routerPayment)
 app.use('/users', routerUser)
 
-app.listen(process.env.PORT, (err) =>
+app.listen(process.env.PORT || 5002, (err) =>
   err
     ? console.log('Error!', err)
     : console.log(`The server is running on port: ${process.env.PORT}`),
