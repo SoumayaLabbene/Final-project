@@ -9,7 +9,7 @@ const routerOrder = require('./routes/order')
 const routerPayment = require('./routes/payment')
 const routerUser = require('./routes/user')
 
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 5002
 
 app.use(express.json())
 app.use(cors())
