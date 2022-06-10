@@ -9,6 +9,8 @@ const routerOrder = require('./routes/order')
 const routerPayment = require('./routes/payment')
 const routerUser = require('./routes/user')
 
+const port = process.env.PORT || 8080
+
 app.use(express.json())
 app.use(cors())
 
@@ -19,7 +21,7 @@ app.use('/orders', routerOrder)
 app.use('/payments', routerPayment)
 app.use('/users', routerUser)
 
-app.listen(process.env.PORT || 5000, (err) =>
+app.listen(port, (err) =>
   err
     ? console.log('Error!', err)
     : console.log(`The server is running on port: ${process.env.PORT}`),
