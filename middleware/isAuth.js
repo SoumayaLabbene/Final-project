@@ -10,7 +10,7 @@ const isAuth = async (req, res, next) => {
     }
     // si token existe
     // on doit verifier si le token valide
-    const decoded = jwt.verify(token, 123)
+    const decoded = jwt.verify(token, process.env.SECRET_KEY)
     const user = await User.findOne({ _id: decoded.id })
     if (!user) {
       return res.status(401).send({ message: ' you are not authorized 2' })
